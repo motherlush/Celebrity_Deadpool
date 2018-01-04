@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   get 'welcome/index'
+  get 'welcome/privacy'
   get 'privacy_policy.htm', to: 'welcome#privacy'
 
   root to: 'welcome#index'
