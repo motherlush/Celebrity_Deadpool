@@ -1,13 +1,14 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 
 <% if user_signed_in? %>
-  <div class="avatar">
-    <img height="24" width="24" src="<%= current_user.image_url %>"/>
-    <br/>
+  <div class="profile">
+    <% if current_user.has_avatar? %>
+      <div class="avatar"><img height="24" width="24" src="<%= current_user.image_url %>"/></div>
+    <% end %>
     <%= current_user.name %>
   </div>
+  <%= link_to "Sign out", destroy_user_session_path %>
 <% else %>
-  Not signed in
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 <% end %>
