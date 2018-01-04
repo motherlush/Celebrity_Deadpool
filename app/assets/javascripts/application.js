@@ -12,4 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require vendor/modernizr-3.5.0.min
+//= require plugins
+//= require main
 //= require_tree .
